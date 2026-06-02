@@ -1222,7 +1222,7 @@
       btn.textContent = 'Sending\u2026';
 
       try {
-        const res = await fetch('https://YOUR_RAILWAY_BACKEND/contact', {
+        const res = await fetch('https://hiddenlaws-backend-production.up.railway.app/subscribe', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name, email, message })
@@ -1259,7 +1259,7 @@
       btn.textContent = 'Sending\u2026';
 
       try {
-        const res = await fetch('https://YOUR_RAILWAY_BACKEND/subscribe', {
+        const res = await fetch('https://hiddenlaws-backend-production.up.railway.app/subscribe', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name, email, list: 'hiddenlaws-waitlist' })
