@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Eric Coste | Hidden Laws of Money</title>
+  <meta name="description" content="Privacy Policy for Eric Coste's email list, hiddenlawsofmoney.com, and digital products. How we collect, use, and protect your information." />
+  <meta name="author" content="Eric Coste" />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://hiddenlawsofmoney.com/privacy.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hiddenlawsofmoney.com/privacy.html" />
+  <meta property="og:title" content="Privacy Policy — Eric Coste" />
+  <meta property="og:description" content="How hiddenlawsofmoney.com collects, uses, and protects your information." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="shortcut icon" href="favicon.svg" />
+  <meta name="theme-color" content="#0c0b09" />
+
+  <!-- Mobile -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Serif+Display:ital@0;1&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:      #0c0b09;
+      --deep:       #131210;
+      --surface:    #1a1915;
+      --rule:       #2e2c27;
+      --muted:      #5a5648;
+      --body:       #b8b0a0;
+      --light:      #ddd5c5;
+      --gold:       #c9a84c;
+      --gold-light: #e2c47a;
+      --gold-dim:   #8a6e30;
+      --cream:      #f0e8d8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--black);
+      color: var(--body);
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.8;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.35;
+    }
+
+    .top-rule {
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--gold-light) 50%, var(--gold) 70%, transparent 100%);
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ─── HEADER ──────────────────────────────────────── */
+    .page-header {
+      padding: 48px 0 0;
+      text-align: center;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      text-decoration: none;
+      margin-bottom: 36px;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--gold); }
+
+    .back-link::before { content: '\2190'; font-size: 14px; }
+
+    .page-eyebrow {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold-dim);
+      padding: 6px 18px;
+      border-radius: 1px;
+      margin-bottom: 28px;
+    }
+
+    .page-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      color: var(--cream);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .page-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .hero-rule {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 36px 0 48px;
+    }
+
+    .hero-rule hr { flex: 1; border: none; border-top: 1px solid var(--rule); }
+
+    .hero-rule-diamond {
+      width: 6px; height: 6px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    /* ─── CONTENT ─────────────────────────────────────── */
+    .content { animation: fadeUp 0.6s 0.1s ease both; }
+
+    .section {
+      margin-bottom: 44px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 4px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .content p {
+      color: var(--light);
+      font-size: 0.98rem;
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+
+    .content p:last-child { margin-bottom: 0; }
+
+    .content ul {
+      list-style: none;
+      margin: 14px 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .content ul li {
+      color: var(--light);
+      font-size: 0.98rem;
+      line-height: 1.7;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .content ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 5px;
+      height: 5px;
+      background: var(--gold-dim);
+      transform: rotate(45deg);
+    }
+
+    .content strong {
+      color: var(--cream);
+      font-weight: 700;
+    }
+
+    .content a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .content a:hover { color: var(--gold-light); }
+
+    /* Highlight box */
+    .info-box {
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--gold);
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+
+    .info-box p {
+      margin-bottom: 0 !important;
+      font-size: 0.92rem !important;
+    }
+
+    /* ─── TABLE OF CONTENTS ───────────────────────────── */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      padding: 24px 28px;
+      margin-bottom: 44px;
+      animation: fadeUp 0.6s 0.15s ease both;
+    }
+
+    .toc-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .toc ol li {
+      counter-increment: toc;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-size: 0.88rem;
+    }
+
+    .toc ol li::before {
+      content: counter(toc, decimal-leading-zero);
+      font-family: 'DM Serif Display', serif;
+      font-size: 0.75rem;
+      color: var(--gold-dim);
+      flex-shrink: 0;
+    }
+
+    .toc ol li a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .toc ol li a:hover { color: var(--gold); }
+
+    /* ─── FOOTER ──────────────────────────────────────── */
+    .footer {
+      padding: 32px 0 48px;
+      text-align: center;
+      margin-top: 20px;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    .footer-rule {
+      width: 60px; height: 1px;
+      background: var(--rule);
+      margin: 0 auto 24px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+    }
+
+    .footer-links a {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--muted);
+      opacity: 0.6;
+    }
+
+    /* ─── ANIMATIONS ──────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    * { -webkit-tap-highlight-color: transparent; }
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+    .back-link, .footer-links a { min-height: 44px; display: inline-flex; align-items: center; }
+
+    @media (max-width: 600px) {
+      .container { padding: 0 18px; }
+      .toc { padding: 18px; }
+      .info-box { padding: 14px 16px; }
+      .section-title { font-size: 1.05rem; }
+      .content p, .content ul li { font-size: 0.95rem; }
+      .footer-links { gap: 20px; flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-rule"></div>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <div class="page-header">
+      <a href="index.html" class="back-link">Back to main page</a>
+      <div>
+        <span class="page-eyebrow">Legal &mdash; Eric Coste</span>
+      </div>
+      <h1 class="page-title">Privacy Policy</h1>
+      <p class="page-meta">Last updated: <span id="last-updated"></span></p>
+    </div>
+
+    <div class="hero-rule">
+      <hr /><div class="hero-rule-diamond"></div><hr />
+    </div>
+
+    <!-- INTRO -->
+    <div class="content">
+      <div class="info-box">
+        <p>
+          Your privacy matters. This policy explains clearly what information is collected
+          when you visit this site or join the email list, how it is used, and what choices
+          you have. No legal jargon. No surprises.
+        </p>
+      </div>
+    </div>
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc">
+      <span class="toc-label">Contents</span>
+      <ol>
+        <li><a href="#who-we-are">Who We Are</a></li>
+        <li><a href="#what-we-collect">Information We Collect</a></li>
+        <li><a href="#how-we-use">How We Use Your Information</a></li>
+        <li><a href="#email-communications">Email Communications</a></li>
+        <li><a href="#third-parties">Third-Party Services</a></li>
+        <li><a href="#cookies">Cookies and Analytics</a></li>
+        <li><a href="#data-retention">Data Retention</a></li>
+        <li><a href="#your-rights">Your Rights</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#children">Children's Privacy</a></li>
+        <li><a href="#changes">Changes to This Policy</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </div>
+
+    <!-- SECTIONS -->
+    <div class="content">
+
+      <!-- 1 -->
+      <div class="section" id="who-we-are">
+        <h2 class="section-title">Who We Are</h2>
+        <p>
+          This website is operated by <strong>Eric Coste</strong>, an independent author
+          and publisher based in Las Vegas, Nevada, United States. References to
+          "we," "us," or "our" in this policy refer to Eric Coste.
+        </p>
+        <p>
+          This policy applies to the website where you are reading this, any associated
+          email list, and digital products sold or distributed under the Eric Coste name.
+        </p>
+        <p>
+          For any privacy-related questions, contact us at:
+          <a href="mailto:hello@ericcoste.com">hello@ericcoste.com</a>
+        </p>
+      </div>
+
+      <!-- 2 -->
+      <div class="section" id="what-we-collect">
+        <h2 class="section-title">Information We Collect</h2>
+        <p>We collect only the minimum information necessary to deliver the service you requested.</p>
+
+        <p><strong>Information you provide directly:</strong></p>
+        <ul>
+          <li><strong>First name</strong> &mdash; used to personalise emails sent to you</li>
+          <li><strong>Email address</strong> &mdash; used to send the free series and any future communications you have opted into</li>
+          <li><strong>Contact form submissions</strong> &mdash; name, email, and message content when you use the contact form</li>
+        </ul>
+
+        <p><strong>Information collected automatically:</strong></p>
+        <ul>
+          <li><strong>IP address</strong> &mdash; collected by hosting and analytics providers for security and basic traffic reporting</li>
+          <li><strong>Browser and device type</strong> &mdash; used to ensure the site renders correctly</li>
+          <li><strong>Pages visited and time on page</strong> &mdash; collected in aggregate to understand which content is most useful</li>
+          <li><strong>Referral source</strong> &mdash; which site or link brought you here</li>
+        </ul>
+
+        <p>
+          We do not collect payment information directly. All purchases are processed by
+          third-party payment providers such as Payhip and Stripe, which have their own
+          privacy policies.
+        </p>
+      </div>
+
+      <!-- 3 -->
+      <div class="section" id="how-we-use">
+        <h2 class="section-title">How We Use Your Information</h2>
+        <p>Your information is used exclusively for the following purposes:</p>
+        <ul>
+          <li>Delivering the free email series you opted into</li>
+          <li>Sending follow-up emails related to the content you signed up for</li>
+          <li>Notifying you of new books, guides, or related resources from Eric Coste that may be relevant to you</li>
+          <li>Responding to messages sent through the contact form</li>
+          <li>Improving the website and email content based on aggregate usage data</li>
+          <li>Complying with legal obligations</li>
+        </ul>
+        <p>
+          We do not use your information for automated profiling, targeted advertising,
+          or any purpose beyond what is listed above.
+        </p>
+      </div>
+
+      <!-- 4 -->
+      <div class="section" id="email-communications">
+        <h2 class="section-title">Email Communications</h2>
+        <p>
+          By submitting your email address on this site, you are opting in to receive
+          the free 3-part series and occasional emails from Eric Coste. These may include
+          follow-up content, book announcements, and relevant resources.
+        </p>
+        <p>
+          <strong>You can unsubscribe at any time.</strong> Every email we send includes
+          a clearly visible unsubscribe link at the bottom. Clicking it immediately removes
+          you from the list. You will not receive further emails after unsubscribing.
+        </p>
+        <p>
+          We use <strong>Resend</strong> to deliver email. Your email address and first
+          name are stored in Resend's system. Resend's privacy policy is available at
+          <a href="https://resend.com/privacy" target="_blank" rel="noopener">resend.com/privacy</a>.
+        </p>
+        <p>
+          We do not send spam. We do not share your email address with advertisers
+          or any third party for marketing purposes. Ever.
+        </p>
+      </div>
+
+      <!-- 5 -->
+      <div class="section" id="third-parties">
+        <h2 class="section-title">Third-Party Services</h2>
+        <p>
+          This site uses a small number of third-party services to operate. Each
+          processes data according to their own privacy policies:
+        </p>
+        <ul>
+          <li>
+            <strong>Resend</strong> &mdash; email delivery.
+            <a href="https://resend.com/privacy" target="_blank" rel="noopener">Privacy policy</a>
+          </li>
+          <li>
+            <strong>Netlify</strong> &mdash; website hosting and infrastructure.
+            <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">Privacy policy</a>
+          </li>
+          <li>
+            <strong>Payhip</strong> &mdash; digital product sales and delivery.
+            <a href="https://payhip.com/privacy" target="_blank" rel="noopener">Privacy policy</a>
+          </li>
+          <li>
+            <strong>Stripe</strong> &mdash; payment processing (via Payhip).
+            <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Privacy policy</a>
+          </li>
+        </ul>
+        <p>
+          We do not sell, rent, trade, or otherwise share your personal information
+          with any third party for their own marketing or commercial purposes.
+        </p>
+      </div>
+
+      <!-- 6 -->
+      <div class="section" id="cookies">
+        <h2 class="section-title">Cookies and Analytics</h2>
+        <p>
+          This site uses minimal cookies necessary for basic functionality. We do not
+          use tracking cookies, advertising cookies, or fingerprinting technologies.
+        </p>
+        <p>
+          If basic analytics are enabled, data is collected in aggregate and anonymised.
+          No individual user profiles are built. You can disable cookies entirely in
+          your browser settings without losing access to any content on this site.
+        </p>
+        <p>
+          We do not use Google Analytics, Facebook Pixel, or any behavioural advertising
+          platform on this site.
+        </p>
+      </div>
+
+      <!-- 7 -->
+      <div class="section" id="data-retention">
+        <h2 class="section-title">Data Retention</h2>
+        <p>
+          We retain your email address and name for as long as you remain subscribed
+          to the email list. When you unsubscribe, your data is removed from active
+          sending lists immediately. Residual copies in backup systems are purged
+          within 30 days.
+        </p>
+        <p>
+          Contact form submissions are retained for up to 12 months for the purpose
+          of reference and follow-up, then deleted.
+        </p>
+        <p>
+          Purchase records held by Payhip and Stripe are subject to their own retention
+          policies and applicable financial regulations.
+        </p>
+      </div>
+
+      <!-- 8 -->
+      <div class="section" id="your-rights">
+        <h2 class="section-title">Your Rights</h2>
+        <p>
+          Regardless of where you are located, you have the following rights with
+          respect to your personal data:
+        </p>
+        <ul>
+          <li><strong>Access</strong> &mdash; request a copy of the personal information we hold about you</li>
+          <li><strong>Correction</strong> &mdash; request correction of inaccurate or incomplete data</li>
+          <li><strong>Deletion</strong> &mdash; request that your personal data be deleted</li>
+          <li><strong>Portability</strong> &mdash; request your data in a structured, machine-readable format</li>
+          <li><strong>Objection</strong> &mdash; object to how your data is being processed</li>
+          <li><strong>Withdrawal of consent</strong> &mdash; unsubscribe or withdraw consent at any time without penalty</li>
+        </ul>
+        <p>
+          To exercise any of these rights, email us at
+          <a href="mailto:hello@ericcoste.com">hello@ericcoste.com</a>.
+          We will respond within 30 days.
+        </p>
+
+        <div class="info-box">
+          <p>
+            <strong>California residents (CCPA):</strong> You have the right to know what
+            personal information is collected, to opt out of the sale of personal information
+            (we do not sell personal information), and to request deletion. Contact us at
+            the email above to exercise these rights.
+          </p>
+        </div>
+
+        <div class="info-box">
+          <p>
+            <strong>EU / UK residents (GDPR):</strong> Our lawful basis for processing your
+            email address is consent, which you provided when you submitted the opt-in form.
+            You may withdraw consent at any time by unsubscribing. If you believe your rights
+            have been violated, you have the right to lodge a complaint with your local
+            supervisory authority.
+          </p>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="section" id="security">
+        <h2 class="section-title">Security</h2>
+        <p>
+          We take reasonable technical and organisational measures to protect your
+          personal information against unauthorised access, alteration, disclosure,
+          or destruction. These include encrypted connections (HTTPS), restricted
+          access to data systems, and use of reputable third-party infrastructure providers.
+        </p>
+        <p>
+          No method of transmission over the internet is 100% secure. While we use
+          industry-standard protections, we cannot guarantee absolute security. In the
+          unlikely event of a data breach that affects your rights, we will notify you
+          as required by applicable law.
+        </p>
+      </div>
+
+      <!-- 10 -->
+      <div class="section" id="children">
+        <h2 class="section-title">Children's Privacy</h2>
+        <p>
+          This site and its content are intended for adults. We do not knowingly collect
+          personal information from anyone under the age of 16. If you believe a child
+          has submitted personal information to us, please contact us at
+          <a href="mailto:hello@ericcoste.com">hello@ericcoste.com</a> and we will
+          delete it promptly.
+        </p>
+      </div>
+
+      <!-- 11 -->
+      <div class="section" id="changes">
+        <h2 class="section-title">Changes to This Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time. When we do, the
+          "last updated" date at the top of this page will reflect the change.
+          For significant changes that affect how your data is used, we will notify
+          active subscribers by email.
+        </p>
+        <p>
+          Continued use of this site or the email list after a policy update
+          constitutes acceptance of the revised terms.
+        </p>
+      </div>
+
+      <!-- 12 -->
+      <div class="section" id="contact">
+        <h2 class="section-title">Contact</h2>
+        <p>
+          For any questions, requests, or concerns related to this Privacy Policy
+          or your personal data, contact us directly:
+        </p>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:hello@ericcoste.com">hello@ericcoste.com</a></li>
+          <li><strong>Name:</strong> Eric Coste</li>
+          <li><strong>Location:</strong> Las Vegas, Nevada, United States</li>
+        </ul>
+        <p>
+          We aim to respond to all privacy-related enquiries within 5 business days.
+        </p>
+      </div>
+
+    </div><!-- /content -->
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-rule"></div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="mailto:hello@ericcoste.com">Contact</a>
+      </div>
+      <p class="footer-copy">&copy; <span id="footer-year"></span> Eric Coste. All rights reserved.</p>
+    </footer>
+
+  </div><!-- /container -->
+
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+    // Set last updated to today's date in readable format
+    const opts = { year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('last-updated').textContent = new Date().toLocaleDateString('en-US', opts);
+  </script>
+
+</body>
+</html>

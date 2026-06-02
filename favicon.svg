@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="8" fill="#0c0b09"/>
+  <!-- top gold rule -->
+  <rect x="6" y="5" width="52" height="2.5" rx="1" fill="#c9a84c"/>
+  <!-- diamond ornament -->
+  <rect x="28.5" y="11" width="7" height="7" rx="0" fill="#c9a84c" transform="rotate(45 32 14.5)"/>
+  <!-- key bow (top circle) -->
+  <circle cx="32" cy="28" r="9" fill="none" stroke="#c9a84c" stroke-width="3"/>
+  <circle cx="32" cy="28" r="4" fill="none" stroke="#c9a84c" stroke-width="2"/>
+  <!-- key shaft -->
+  <rect x="30.5" y="35" width="3" height="18" rx="1" fill="#c9a84c"/>
+  <!-- key teeth -->
+  <rect x="33.5" y="43" width="4" height="2.5" rx="0.5" fill="#c9a84c"/>
+  <rect x="33.5" y="48" width="4" height="2.5" rx="0.5" fill="#c9a84c"/>
+  <!-- bottom gold rule -->
+  <rect x="6" y="56.5" width="52" height="2.5" rx="1" fill="#c9a84c"/>
+</svg>
