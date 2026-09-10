@@ -109,7 +109,7 @@
         "primaryImageOfPage": "https://hiddenlawsofmoney.com/Cover1.png",
         "speakable": {
           "@type": "SpeakableSpecification",
-          "cssSelector": [".hero-copy .lede", ".excerpt-item blockquote", ".faq-q", ".faq-a"]
+          "cssSelector": [".hero-copy .lede", ".excerpt-item blockquote", ".sample-copy .lede", ".faq-q", ".faq-a"]
         }
       },
       {
@@ -145,6 +145,14 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "It's built around a 72-hour window: read a law, then work the matching page before the idea goes cold. It works whether you take all ten in a weekend or spread them over ten weeks."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is there a free sample of the book?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Enter your email on the site and you'll get instant access to a free excerpt containing the full Introduction and Chapter 1, exactly as printed in the book."
             }
           }
         ]
@@ -237,6 +245,12 @@
     align-items:center;
     justify-content:space-between;
     gap:16px;
+    flex-wrap:wrap;
+  }
+  .header-links{
+    display:flex;
+    align-items:center;
+    gap:22px;
   }
   .brand{
     font-family:'Cinzel', serif;
@@ -369,6 +383,54 @@
   .excerpt-item.lead blockquote{
     font-size:clamp(1.4rem, 3.4vw, 2rem);
   }
+
+  /* ---------- free sample ---------- */
+  .sr-only{
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+    overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+  }
+  .sample-card{
+    max-width:640px;
+    margin:0 auto;
+    text-align:center;
+    background:var(--surface);
+    border:1px solid var(--line);
+    padding:44px 40px;
+    border-radius:2px;
+  }
+  .sample-copy .lede{margin-left:auto; margin-right:auto;}
+  .sample-form{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+    margin-top:26px;
+  }
+  .sample-form input[type="email"]{
+    flex:1 1 260px;
+    max-width:340px;
+    padding:14px 16px;
+    font-family:'EB Garamond', serif;
+    font-size:1.05rem;
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:2px;
+    color:var(--parchment);
+  }
+  .sample-form input[type="email"]:focus-visible{
+    outline:2px solid var(--verdigris);
+    outline-offset:2px;
+  }
+  .sample-form .btn{border:none; cursor:pointer;}
+  .sample-form .btn:disabled{opacity:0.6; cursor:default; transform:none;}
+  .sample-msg{
+    margin:16px 0 0;
+    font-size:0.96rem;
+    min-height:1.4em;
+  }
+  .sample-msg.error{color:#d99a7a;}
+  .sample-msg.success{color:var(--gold-bright);}
+  .sample-msg a{color:var(--gold-bright); text-decoration:underline;}
 
   /* ---------- stats ---------- */
   .stats{padding:10px 0 20px;}
@@ -537,7 +599,10 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="#top">The Hidden Laws of Money</a>
-    <a class="header-cta" href="https://payhip.com/b/DzR2a" target="_blank" rel="noopener">Get the book — $26</a>
+    <div class="header-links">
+      <a class="header-cta" href="#free-sample" style="border-bottom:none;">Free sample</a>
+      <a class="header-cta" href="https://payhip.com/b/DzR2a" target="_blank" rel="noopener">Get the book — $26</a>
+    </div>
   </div>
 </header>
 
@@ -602,6 +667,46 @@
       </div>
     </div>
   </section>
+
+  <div class="sigil" aria-hidden="true">
+    <span class="rule"></span>
+    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="20" cy="20" r="17" stroke="currentColor" stroke-width="1"/>
+      <circle cx="20" cy="20" r="3.2" stroke="currentColor" stroke-width="1"/>
+      <path d="M20 3 L20 8 M20 32 L20 37 M3 20 L8 20 M32 20 L37 20" stroke="currentColor" stroke-width="1"/>
+    </svg>
+    <span class="rule right"></span>
+  </div>
+
+  <section class="sample" id="free-sample">
+    <div class="wrap">
+      <div class="sample-card">
+        <div class="sample-copy">
+          <span class="eyebrow">Free sample</span>
+          <h2 class="section-title" style="margin-top:10px;">Read the Introduction and Chapter 1 — free</h2>
+          <p class="lede" style="margin-top:0;">The real opening pages, exactly as printed in the book. No summary, no rewrite. Enter your email and get instant access.</p>
+
+          <form id="sample-form" class="sample-form" novalidate>
+            <label for="sample-email" class="sr-only">Email address</label>
+            <input type="email" id="sample-email" name="email" placeholder="you@email.com" required autocomplete="email" />
+            <button type="submit" class="btn btn-primary" id="sample-submit">Send me the free sample</button>
+          </form>
+          <p class="sample-msg" id="sample-msg" role="status" aria-live="polite"></p>
+          <p class="format-note" style="margin-top:14px;">One email. No spam. Unsubscribe anytime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sigil" aria-hidden="true">
+    <span class="rule"></span>
+    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="20" cy="20" r="17" stroke="currentColor" stroke-width="1"/>
+      <circle cx="20" cy="20" r="3.2" stroke="currentColor" stroke-width="1"/>
+      <path d="M20 3 L20 8 M20 32 L20 37 M3 20 L8 20 M32 20 L37 20" stroke="currentColor" stroke-width="1"/>
+    </svg>
+    <span class="rule right"></span>
+  </div>
 
   <section class="stats">
     <div class="wrap">
@@ -754,6 +859,10 @@
         <p class="faq-a">It's built around a 72-hour window: read a law, then work the matching page before the idea goes cold. It works whether you take all ten in a weekend or spread them over ten weeks.</p>
       </div>
       <div class="faq-item">
+        <div class="faq-q">Is there a free sample?</div>
+        <p class="faq-a">Yes. <a href="#free-sample">Enter your email above</a> for instant access to the full Introduction and Chapter 1, exactly as printed in the book.</p>
+      </div>
+      <div class="faq-item">
         <div class="faq-q">Not sure the book is right for me?</div>
         <p class="faq-a">Take the free <a href="https://quiz.hiddenlawsofmoney.com?utm_source=hiddenlawsofmoney&utm_medium=website&utm_campaign=archetype">Hidden Wealth Archetype Quiz</a> first. It takes a couple of minutes and points you to where to start.</p>
       </div>
@@ -788,6 +897,72 @@
       v.removeAttribute('loop');
       v.pause();
     }
+  })();
+</script>
+
+<script>
+  (function(){
+    var form = document.getElementById('sample-form');
+    if (!form) return;
+    var input = document.getElementById('sample-email');
+    var btn = document.getElementById('sample-submit');
+    var msg = document.getElementById('sample-msg');
+    var SAMPLE_URL = 'free-sample.pdf';
+    var API_URL = 'https://hiddenlaws-backend-production.up.railway.app/subscribe';
+
+    function setMsg(text, kind){
+      msg.textContent = text;
+      msg.className = 'sample-msg' + (kind ? ' ' + kind : '');
+    }
+
+    function isValidEmail(v){
+      return !!v && v.indexOf('@') > 0 && v.indexOf('.') > v.indexOf('@') + 1;
+    }
+
+    function revealDownload(){
+      form.hidden = true;
+      msg.innerHTML = "You're in — <a href=\"" + SAMPLE_URL + "\" target=\"_blank\" rel=\"noopener\">click here to download your free sample</a>.";
+      msg.className = 'sample-msg success';
+    }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var email = input.value.trim();
+      if (!isValidEmail(email)) {
+        setMsg('Enter a valid email address.', 'error');
+        input.focus();
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      setMsg('');
+
+      fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email })
+      })
+      .then(function(res){
+        return res.json().catch(function(){ return {}; }).then(function(data){
+          return { ok: res.ok, data: data };
+        });
+      })
+      .then(function(result){
+        if (result.ok && result.data && result.data.success) {
+          revealDownload();
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Send me the free sample';
+          setMsg((result.data && result.data.error) || 'Something went wrong. Please try again.', 'error');
+        }
+      })
+      .catch(function(){
+        btn.disabled = false;
+        btn.textContent = 'Send me the free sample';
+        setMsg('Something went wrong. Please check your connection and try again.', 'error');
+      });
+    });
   })();
 </script>
 </body>
