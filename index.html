@@ -334,27 +334,33 @@
   .format-note a{color:var(--gold); text-decoration:none; border-bottom:1px solid var(--line);}
   .format-note a:hover{color:var(--gold-bright); border-color:var(--gold);}
 
-  /* ---------- premise / quote ---------- */
-  .premise{padding:10px 0 10px;}
-  blockquote.premise-quote{
-    margin:0 auto;
-    max-width:680px;
+  /* ---------- excerpts ---------- */
+  .excerpts{padding:10px 0 6px;}
+  .excerpt-item{
+    max-width:640px;
+    margin:0 auto 46px;
     text-align:center;
+  }
+  .excerpt-item:last-child{margin-bottom:0;}
+  .excerpt-item blockquote{
+    margin:0;
     font-family:'Cinzel', serif;
-    font-size:clamp(1.3rem, 3vw, 1.7rem);
+    font-size:clamp(1.15rem, 2.6vw, 1.5rem);
     color:var(--gold-bright);
-    line-height:1.45;
+    line-height:1.5;
     font-weight:500;
   }
-  blockquote.premise-quote::before{content:"\201C";}
-  blockquote.premise-quote::after{content:"\201D";}
-  .premise-attr{
-    text-align:center;
-    margin-top:18px;
+  .excerpt-item blockquote::before{content:"\201C";}
+  .excerpt-item blockquote::after{content:"\201D";}
+  .excerpt-cite{
+    margin-top:16px;
     color:var(--muted);
     font-variant:small-caps;
-    letter-spacing:0.08em;
-    font-size:0.95rem;
+    letter-spacing:0.1em;
+    font-size:0.88rem;
+  }
+  .excerpt-item.lead blockquote{
+    font-size:clamp(1.4rem, 3.4vw, 2rem);
   }
 
   /* ---------- stats ---------- */
@@ -564,10 +570,29 @@
     <span class="rule right"></span>
   </div>
 
-  <section class="premise">
+  <section class="excerpts">
     <div class="wrap">
-      <blockquote class="premise-quote">This isn't another budget spreadsheet or savings hack. This is the operating system the wealthy absorbed as kids, and you're learning right now.</blockquote>
-      <p class="premise-attr">From the opening pages</p>
+      <p style="text-align:center; margin:0 0 34px;"><span class="eyebrow">Five lines from inside</span></p>
+      <div class="excerpt-item lead">
+        <blockquote>These rules don't care how smart you are. They operate in the background, like gravity.</blockquote>
+        <div class="excerpt-cite">Introduction &middot; Page 1</div>
+      </div>
+      <div class="excerpt-item">
+        <blockquote>If the rules you've been following were designed by someone else, for someone else's benefit, what would you do differently if you finally learned your own?</blockquote>
+        <div class="excerpt-cite">Introduction &middot; Page 3</div>
+      </div>
+      <div class="excerpt-item">
+        <blockquote>The most dangerous financial influence in your life is rarely a bad investment. It's a close relationship with a low financial ceiling.</blockquote>
+        <div class="excerpt-cite">Chapter 3 &middot; Page 18</div>
+      </div>
+      <div class="excerpt-item">
+        <blockquote>High earners with low velocity are just broke people with better wardrobes and more sophisticated stress.</blockquote>
+        <div class="excerpt-cite">Chapter 4 &middot; Page 26</div>
+      </div>
+      <div class="excerpt-item">
+        <blockquote>The game was always being played. Now you know the rules. The rest is yours to write.</blockquote>
+        <div class="excerpt-cite">Final Word &middot; Page 89</div>
+      </div>
     </div>
   </section>
 
