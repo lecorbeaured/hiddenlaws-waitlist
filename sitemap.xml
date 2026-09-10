@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
   <url>
     <loc>https://hiddenlawsofmoney.com/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://hiddenlawsofmoney.com/Cover1.png</image:loc>
+      <image:title>The Hidden Laws of Money book cover</image:title>
+      <image:caption>Book cover for The Hidden Laws of Money by Eric Coste: an ornate brass key on a dark stone surface inscribed with alchemical circles.</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://hiddenlawsofmoney.com/Cover1.png</video:thumbnail_loc>
+      <video:title>The Hidden Laws of Money — Cover Reveal</video:title>
+      <video:description>Animated reveal of the book cover for The Hidden Laws of Money by Eric Coste.</video:description>
+      <video:content_loc>https://hiddenlawsofmoney.com/cover-reveal.mp4</video:content_loc>
+      <video:duration>5</video:duration>
+      <video:publication_date>2026-09-10</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
 
   <url>
