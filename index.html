@@ -435,6 +435,48 @@
   .sample-msg.success{color:var(--gold-bright);}
   .sample-msg a{color:var(--gold-bright); text-decoration:underline;}
 
+  /* ---------- welcome series ---------- */
+  .welcome{padding:10px 0 20px;}
+  .welcome-card{
+    max-width:640px;
+    margin:0 auto;
+    text-align:center;
+    background:var(--surface);
+    border:1px solid var(--line);
+    padding:44px 40px;
+    border-radius:2px;
+  }
+  .welcome-card .lede{margin-left:auto; margin-right:auto;}
+  .welcome-form{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+    margin-top:26px;
+  }
+  .welcome-form input{
+    flex:1 1 200px;
+    max-width:300px;
+    padding:14px 16px;
+    font-family:'EB Garamond', serif;
+    font-size:1.05rem;
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:2px;
+    color:var(--parchment);
+  }
+  .welcome-form input::placeholder{opacity:.6;}
+  .welcome-form .btn{border:none; cursor:pointer;}
+  .welcome-form .btn:disabled{opacity:0.6; cursor:default; transform:none;}
+  .welcome-msg{
+    margin:16px 0 0;
+    font-size:0.96rem;
+    min-height:1.4em;
+  }
+  .welcome-msg.error{color:#d99a7a;}
+  .welcome-msg.success{color:var(--gold-bright);}
+  .hp{position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;}
+
   /* ---------- workbook bonus ---------- */
   .workbook-promo{padding:10px 0 20px;}
   .workbook-card{
@@ -654,6 +696,36 @@
           <a class="btn btn-secondary" href="#free-sample">Read a free sample</a>
         </div>
         <p class="format-note">Instant download · PDF · EPUB · DOCX · includes the 36-page action workbook · not sure yet? <a href="https://quiz.hiddenlawsofmoney.com?utm_source=hiddenlawsofmoney&utm_medium=website&utm_campaign=archetype">take the free quiz</a></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="sigil" aria-hidden="true">
+    <span class="rule"></span>
+    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="20" cy="20" r="17" stroke="currentColor" stroke-width="1"/>
+      <circle cx="20" cy="20" r="3.2" stroke="currentColor" stroke-width="1"/>
+      <path d="M20 3 L20 8 M20 32 L20 37 M3 20 L8 20 M32 20 L37 20" stroke="currentColor" stroke-width="1"/>
+    </svg>
+    <span class="rule right"></span>
+  </div>
+
+  <section class="welcome" id="free-series">
+    <div class="wrap">
+      <div class="welcome-card">
+        <span class="eyebrow">Free 5-day email series</span>
+        <h2 class="section-title" style="margin-top:10px;">Learn 5 Hidden Laws of Money in 5 days, free</h2>
+        <p class="lede" style="margin-top:0;">One law per email, each with a small action you can take the same day. The same ideas from the book, in your inbox, starting now.</p>
+        <form id="welcome-form" class="welcome-form" novalidate>
+          <label class="sr-only" for="w-name">First name</label>
+          <input id="w-name" name="name" autocomplete="given-name" maxlength="60" placeholder="First name (optional)">
+          <label class="sr-only" for="w-email">Email address</label>
+          <input type="email" id="w-email" name="email" required autocomplete="email" maxlength="254" placeholder="Your email address">
+          <span class="hp" aria-hidden="true"><label for="w-company">Company</label><input id="w-company" name="company" tabindex="-1" autocomplete="off"></span>
+          <button type="submit" class="btn btn-primary" id="welcome-submit">Send Me Day 1</button>
+        </form>
+        <p class="welcome-msg" id="w-msg" role="status" aria-live="polite"></p>
+        <p class="format-note" style="margin-top:14px;">Day 1 lands in your inbox right away, then one per day. No spam. Unsubscribe anytime. <a href="/privacy.html">Privacy Policy</a></p>
       </div>
     </div>
   </section>
@@ -977,6 +1049,64 @@
       v.removeAttribute('loop');
       v.pause();
     }
+  })();
+</script>
+
+<script>
+  (function(){
+    var f = document.getElementById('welcome-form');
+    if (!f) return;
+    var email = document.getElementById('w-email');
+    var name = document.getElementById('w-name');
+    var company = document.getElementById('w-company');
+    var btn = document.getElementById('welcome-submit');
+    var msg = document.getElementById('w-msg');
+    var opened = Date.now();
+
+    function setMsg(text, kind){
+      msg.textContent = text;
+      msg.className = 'welcome-msg' + (kind ? ' ' + kind : '');
+    }
+
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var em = email.value.trim();
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) {
+        setMsg('Enter a valid email address.', 'error');
+        email.focus();
+        return;
+      }
+      btn.disabled = true;
+      var orig = btn.textContent;
+      btn.textContent = 'Sending\u2026';
+      setMsg('');
+
+      fetch('/api/welcome', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: em, name: name.value.trim(), company: company.value, t: Date.now() - opened })
+      })
+      .then(function(res){
+        return res.json().catch(function(){ return {}; }).then(function(data){
+          return { ok: res.ok, data: data };
+        });
+      })
+      .then(function(result){
+        btn.disabled = false;
+        btn.textContent = orig;
+        if (result.ok) {
+          setMsg('You\u2019re in. Day 1 is on its way, check your inbox (and spam, just in case).', 'success');
+          f.reset();
+        } else {
+          setMsg((result.data && result.data.error) || 'Something went wrong. Please try again.', 'error');
+        }
+      })
+      .catch(function(){
+        btn.disabled = false;
+        btn.textContent = orig;
+        setMsg('Something went wrong. Please check your connection and try again.', 'error');
+      });
+    });
   })();
 </script>
 
